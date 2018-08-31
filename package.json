@@ -1,0 +1,23 @@
+{
+  "name": "web_app_pubs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renatosoares/web_app_pubs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renatosoares/web_app_pubs/issues"
+  },
+  "homepage": "https://github.com/renatosoares/web_app_pubs#readme",
+  "devDependencies": {
+    "laravel-mix": "^2.1.14"
+  }
+}
