@@ -32,10 +32,4 @@
     </form>
 </template>
 
-<script>
-export default {
-  mounted() {
-    console.log("Component mounted.");
-  }
-};
-</script>
+<script src="./form.js"></script>
