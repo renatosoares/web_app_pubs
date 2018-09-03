@@ -14,13 +14,23 @@ export default {
     },
     methods: {
         create(e) {
-            axios.post('https://httpbin.org/post', {
-                name: this.name,
-                city: this.city,
-                state: this.state,
-                country: this.country
-              })
-              .then(function (response) {
+            axios({
+                method: 'post',
+                url: '/publishers',
+                baseURL: 'http://127.0.0.1:8000/',
+                timeout: 1000,
+                data: {
+                    name: this.name,
+                    city: this.city,
+                    state: this.state,
+                    country: this.country 
+                },
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Cache-Control': 'no-cache',
+                }
+            })
+            .then(function (response) {
                 console.log(response);
               })
               .catch(function (error) {
