@@ -1,8 +1,16 @@
 'use strict';
 
 export default {
+    props: {
+        url: {
+            type: String
+        },
+        typeMethod: {
+            type: String
+        }
+    },
     mounted() {
-      console.log("Component mounted. form");
+        console.log("Component mounted. form");
     },
     data() {
         return {
@@ -10,14 +18,13 @@ export default {
             city: null,
             state: null,
             country: null
-        }
+        };
     },
     methods: {
-        create(e) {
+        create(u, m) {
             axios({
-                method: 'post',
-                url: '/publishers',
-                baseURL: 'http://127.0.0.1:8000/',
+                method: m,
+                url: u,
                 timeout: 1000,
                 data: {
                     name: this.name,
@@ -30,14 +37,12 @@ export default {
                     'Cache-Control': 'no-cache',
                 }
             })
-            .then(function (response) {
-                console.log(response);
-              })
-              .catch(function (error) {
-                console.log(error);
-              });
-
-              e.preventDefault();
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
         }
     }
 };

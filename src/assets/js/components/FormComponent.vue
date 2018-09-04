@@ -1,5 +1,5 @@
 <template>
-    <form @submit="create" method="POST">
+    <form @submit.prevent="create(url, typeMethod)">
         <div class="form-row">
             <div class="form-group col-md">
                 <label for="inputName4">Name</label>

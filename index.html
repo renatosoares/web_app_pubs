@@ -26,7 +26,7 @@
                 <search-by-name v-bind:submit-call="searchByName" ></search-by-name>
             </div>
             <div class="col-sm">
-                <form-component></form-component>
+                <form-component v-bind:url="apiBaseUrl + apiUrl" type-method="post" ></form-component>
             </div>
         </div>
         <hr>
