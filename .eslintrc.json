@@ -6,10 +6,13 @@
     ],
     "parserOptions": {
         "ecmaFeatures": {
-            "jsx": true
+            "jsx": true,
+            "modules": true,
+            "restParams" : true,
+            "spread" : true
         },
         "ecmaVersion": 6,
-        "sourceType": "script"
+        "sourceType": "module"
     },
     "rules": {
         "constructor-super": 2,
@@ -69,6 +72,7 @@
         "browser": true,
         "commonjs": true,
         "es6": true,
-        "jquery": true
+        "jquery": true,
+        "node": true
     }
 }

@@ -1,7 +1,12 @@
 'use strict';
 
 export default {
+    props: {
+        pubs: {
+            type: Array
+        }
+    },
     mounted() {
-        console.log('list_publisher');
+        console.log('Mounted module list_publisher');
     }
 };

@@ -48,7 +48,9 @@ const app = new Vue({
                 }
             })
                 .then((response) => {
-                    console.log(response.data);
+                    if (typeof response.data === 'object') {
+                        this.publishers = response.data;
+                    }
                 })
                 .catch((error) => {
                     console.log(error);
