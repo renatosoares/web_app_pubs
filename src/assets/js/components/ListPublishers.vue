@@ -21,8 +21,9 @@
                     <td>{{ pub.city }}</td>
                     <td>{{ pub.state }}</td>
                     <td>{{ pub.country }}</td>
-                    <td><a href="http://">up</a></td>
-                    <td><a href="http://">del</a></td>
+                    
+                    <td><button @click="update(url, pub.id)">UP</button></td>
+                    <td><button @click="destroy(url, pub.id)">DEL</button></td>
 
                 </tr>
             </tbody>

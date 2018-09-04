@@ -29,7 +29,9 @@ const app = new Vue({
         ListPublishers
     },
     data: {
-        publishers: null
+        publishers: null,
+        apiUrl: '/publishers',
+        apiBaseUrl: 'http://127.0.0.1:8000',
     },
     methods: {
         searchByName(e) {
@@ -37,8 +39,8 @@ const app = new Vue({
 
             axios({
                 method: 'get',
-                url: '/publishers',
-                baseURL: 'http://127.0.0.1:8000/',
+                url: this.apiUrl,
+                baseURL: this.apiBaseUrl,
                 timeout: 1000,
                 params: {
                     name: e.target[0].value, // FIXME refactor
