@@ -1,5 +1,5 @@
 <template>
-    <form @submit="searchByName">
+    <form @submit="submitCall">
         <div class="form-group">
             <label for="formGroupExampleInput">Busca por nome</label>
             <input 
@@ -7,8 +7,7 @@
                 class="form-control" 
                 id="formGroupExampleInput" 
                 placeholder="Example input"
-                name="name"
-                v-model="searchName" >
+                name="name" >
         </div>
         <button 
             type="submit" 

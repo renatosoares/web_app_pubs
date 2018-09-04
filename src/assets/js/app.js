@@ -16,13 +16,46 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
-Vue.component('form-component', require('./components/FormComponent.vue'));
-Vue.component('search-by-name', require('./components/SearchByName.vue'));
-Vue.component('list-publishers', require('./components/ListPublishers.vue'));
+import FormComponent from './components/FormComponent.vue';
+import SearchByName from './components/SearchByName.vue';
+import ListPublishers from './components/ListPublishers.vue';
+
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    components: {
+        FormComponent,
+        SearchByName,
+        ListPublishers
+    },
+    data: {
+        publishers: null
+    },
+    methods: {
+        searchByName(e) {
+            e.preventDefault();
+
+            axios({
+                method: 'get',
+                url: '/publishers',
+                baseURL: 'http://127.0.0.1:8000/',
+                timeout: 1000,
+                params: {
+                    name: e.target[0].value, // FIXME refactor
+                },
+                headers: {
+                    'Cache-Control': 'no-cache',
+                }
+            })
+                .then((response) => {
+                    console.log(response.data);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+
+        }
+    }
 });
 
 $.ajaxSetup({

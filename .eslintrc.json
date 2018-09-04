@@ -1,19 +1,21 @@
 {
-    "extends": "airbnb-base",
     "extends": [
+        "eslint:recommended",
         "plugin:vue/essential",
         "plugin:vue/strongly-recommended"
     ],
     "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
         "ecmaVersion": 6,
-        "sourceType": "script",
-        "ecmaFeatures": {}
+        "sourceType": "script"
     },
     "rules": {
-        "vue/html-indent": ["error", 4],
         "constructor-super": 2,
         "for-direction": 2,
         "getter-return": 2,
+        "indent": ["error", 4],
         "no-case-declarations": 2,
         "no-class-assign": 2,
         "no-compare-neg-zero": 2,
@@ -58,15 +60,15 @@
         "no-unused-vars": 2,
         "no-useless-escape": 2,
         "require-yield": 2,
+        "semi": 2,
         "use-isnan": 2,
         "valid-typeof": 2,
-        "indent": ["error", 4],
-        "semi": 2
+        "vue/html-indent": ["error", 4]
     },
     "env": {
-        "jquery": true,
-        "es6": true,
         "browser": true,
-        "commonjs": true
+        "commonjs": true,
+        "es6": true,
+        "jquery": true
     }
 }
