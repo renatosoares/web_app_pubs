@@ -26,13 +26,13 @@
                 <search-by-name v-bind:submit-call="searchByName" ></search-by-name>
             </div>
             <div class="col-sm">
-                <form-component v-bind:url="apiBaseUrl + apiUrl" type-method="post" ></form-component>
+                <form-component v-bind:url="apiBaseUrl + apiUrl" type-method="post" v-bind:data-update="dataEdit" ></form-component>
             </div>
         </div>
         <hr>
         <div class="row">
             <div class="col-sm">
-                <list-publishers v-bind:pubs="publishers" v-bind:url="apiBaseUrl + apiUrl"></list-publishers>
+                <list-publishers v-bind:pubs="publishers" v-bind:url="apiBaseUrl + apiUrl" v-bind:fun-up="edit"></list-publishers>
             </div>
         </div>
     </div>

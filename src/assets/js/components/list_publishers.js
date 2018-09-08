@@ -7,6 +7,9 @@ export default {
         },
         url: {
             type: String
+        },
+        funUp: {
+            type: Function
         }
     },
     mounted() {
@@ -22,8 +25,8 @@ export default {
                 }
             });
         },
-        update(url, id) {
-            console.log(url + '/' + id);
+        update(id) {
+            this.funUp(id);
         }
     }
 };

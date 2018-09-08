@@ -1,13 +1,13 @@
 <template>
-    <form @submit.prevent="create(url, typeMethod)">
+    <form @submit.prevent="submited(url, typeMethod)">
         <div class="form-row">
             <div class="form-group col-md">
                 <label for="inputName4">Name</label>
                 <input type="text" class="form-control" id="inputName4" placeholder="Name" name="name" v-model="name">
             </div>
-            
+
         </div>
-        
+
         <div class="form-row">
             <div class="form-group col-md">
                 <label for="inputCity">City</label>

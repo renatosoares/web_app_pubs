@@ -32,6 +32,7 @@ const app = new Vue({
         publishers: null,
         apiUrl: '/publishers', // FIXME vou adicionara o valor de quem vai ser editado
         apiBaseUrl: 'http://127.0.0.1:8000',
+        dataEdit: null,
     },
     methods: {
         searchByName(e) {
@@ -58,6 +59,23 @@ const app = new Vue({
                     console.log(error);
                 });
 
+        },
+        edit(id) {
+            axios({
+                method: 'get',
+                url: this.apiUrl + '/' + id,
+                baseURL: this.apiBaseUrl,
+                timeout: 1000,
+                headers: {
+                    'Cache-Control': 'no-cache',
+                }
+            })
+                .then((response) => {
+                    this.dataEdit = response.data;
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
         }
     }
 });
