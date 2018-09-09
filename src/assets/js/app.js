@@ -30,8 +30,8 @@ const app = new Vue({
     },
     data: {
         publishers: null,
-        apiUrl: '/publishers', // FIXME vou adicionara o valor de quem vai ser editado
-        apiBaseUrl: 'http://127.0.0.1:8000',
+        apiUrl: '/publishers',
+        apiBaseUrl: 'https://pubs-web-service-app.herokuapp.com', // FIXME vou adicionara o valor de quem vai ser editado
         dataEdit: null,
     },
     methods: {
